@@ -25,6 +25,7 @@ let lastTime;
 let speedScale;
 let score;
 let Highscore;
+let invincible = false; // Biến để kiểm tra trạng thái bất tử của dino
 
 function update(time) {
   if (lastTime == null) {
@@ -47,6 +48,7 @@ function update(time) {
 }
 
 function checkLose() {
+  if (invincible) return false; // Bỏ qua việc kiểm tra thua nếu đang bất tử
   const dinoRect = getDinoRect();
   return getCactusRects().some(rect => isCollision(rect, dinoRect));
 }
@@ -88,6 +90,7 @@ function handleStart() {
   speedScale = 1;
   score = 0;
   Highscore = 1000;
+  invincible = false; // Đặt lại trạng thái bất tử khi bắt đầu trò chơi
   setupclouds();
   setupGround();
   setupDino();
@@ -120,3 +123,21 @@ function setPixelToWorldScale() {
   worldElem.style.width = `${WORLD_WIDTH * worldToPixelScale}px`;
   worldElem.style.height = `${WORLD_HEIGHT * worldToPixelScale}px`;
 }
+
+function showGodmodeNotification(enabled) {
+  const notification = document.getElementById('godmode-notification');
+  notification.textContent = enabled ? 'Godmode enabled' : 'Godmode disabled';
+  notification.style.display = 'block'; // Hiển thị thông báo
+  setTimeout(() => {
+    notification.style.display = 'none'; // Ẩn thông báo sau 2 giây
+  }, 2000);
+}
+
+document.addEventListener('keydown', (event) => {
+  if (event.code === 'KeyT') {
+    invincible = !invincible; // Chuyển đổi trạng thái bất tử
+    console.log(`Invincibility: ${invincible ? 'ON' : 'OFF'}`);
+    showGodmodeNotification(invincible); // Hiển thị thông báo
+    event.preventDefault(); // Ngăn chặn hành động mặc định của phím T (nếu có)
+  }
+});

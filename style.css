@@ -95,6 +95,19 @@
   right: 50%;
 }
 
+.logo-text {
+  position: absolute;
+  top: 11%; /* Đặt phần tử ở giữa theo chiều dọc */
+  left: 51%; /* Đặt phần tử ở giữa theo chiều ngang */
+  transform: translate(-50%, -50%); /* Căn giữa chính xác phần tử */
+  font-size: 2vmin; /* Kích thước chữ tương đối với kích thước viewport */
+  color: #535353; /* Màu chữ */
+  text-align: center; /* Căn giữa nội dung văn bản */
+  padding: 1em; /* Khoảng cách xung quanh nội dung */
+  background-color: rgba(255, 255, 255, 0.8); /* Nền trắng với độ trong suốt */
+  border-radius: 10px; /* Bo tròn các góc của phần tử */
+}
+
 .start-screen {
   position: absolute;
   top: 50%; /* Đặt phần tử ở giữa theo chiều dọc */
@@ -121,6 +134,20 @@
   display: none;
   z-index: 1000;
   text-align: center;
+}
+
+#godmode-notification {
+  position: absolute;
+  top: 83%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 0, 0, 0.8); /* Màu nền đỏ cho thông báo Godmode */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  display: none; /* Ẩn thông báo mặc định */
+  z-index: 1000;
 }
 
 #notification-link {
