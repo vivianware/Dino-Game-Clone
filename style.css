@@ -70,24 +70,67 @@
     left: calc(var(--left) * 1%);
   }
 
-.dino {
+  .dino {
     --bottom: 0;
     position: absolute;
     left: 1%;
     height: 30%;
     bottom: calc(var(--bottom) * 1%);
-}
+    border: 2px solid #01ff62; /* Viền màu xanh lá cây cho dino */
+  }
   
 .cactus {
-    position: absolute;
-    left: calc(var(--left) * 1%);
-    height: 30%;
-    bottom: 0;
+  position: absolute;
+  left: calc(var(--left) * 1%);
+  height: 30%;
+  bottom: 0;
+  border-radius: 15px; /* Bo tròn các góc của cactus */
+  border: 2px solid #f12020; /* Viền màu đỏ cho cactus */
 }
 
 .logo {
   position: absolute;
-  left: 50%;
+  left: 49%;
   top: 1%;
   right: 50%;
+}
+
+.start-screen {
+  position: absolute;
+  top: 50%; /* Đặt phần tử ở giữa theo chiều dọc */
+  left: 50%; /* Đặt phần tử ở giữa theo chiều ngang */
+  transform: translate(-50%, -50%); /* Căn giữa chính xác phần tử */
+  font-size: 2vmin; /* Kích thước chữ tương đối với kích thước viewport */
+  color: #535353; /* Màu chữ */
+  text-align: center; /* Căn giữa nội dung văn bản */
+  padding: 1em; /* Khoảng cách xung quanh nội dung */
+  background-color: rgba(255, 255, 255, 0.8); /* Nền trắng với độ trong suốt */
+  border-radius: 10px; /* Bo tròn các góc của phần tử */
+}
+
+.notification {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 1em;
+  border-radius: 5px;
+  font-size: 2vmin;
+  display: none;
+  z-index: 1000;
+  text-align: center;
+}
+
+#notification-link {
+  display: inline-block;
+  margin-top: 1em;
+  color: #01ff62; /* Màu xanh lá cây cho liên kết */
+  text-decoration: none; /* Bỏ gạch chân */
+  font-weight: bold;
+}
+
+#notification-link:hover {
+  text-decoration: underline; /* Gạch chân khi hover */
 }
