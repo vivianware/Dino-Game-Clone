@@ -65,7 +65,7 @@ function updateSpeedScale(delta) {
 }
 
 function updateScore(delta) {
-  score += delta * 0.01;
+  score += delta * 0.0178;
   scoreElem.textContent = Math.floor(score);
 
   if (Math.floor(score) >= 515) {
