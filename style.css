@@ -78,7 +78,7 @@
     bottom: calc(var(--bottom) * 1%);
     border: 2px solid #01ff62; /* Viền màu xanh lá cây cho dino */
   }
-  
+
 .cactus {
   position: absolute;
   left: calc(var(--left) * 1%);
