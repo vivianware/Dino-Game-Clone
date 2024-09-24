@@ -1,6 +1,6 @@
 {
-    "latest_version": "0.0.2",
-    "change_log": "Released our software for NFA Tool",
+    "latest_version": "0.0.4",
+    "change_log": "Updated security, improve performance ",
     "download_url": "https://mega.nz/folder/TIM3DZJa#XS6yTVX_JYldl80D5TAAKA",
-    "force_update_below_version": "0.0.1"
+    "force_update_below_version": "0.0.3"
 }
